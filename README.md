@@ -1,0 +1,2 @@
+# CocosGames
+Some simple games
