@@ -11,14 +11,6 @@
     "modules" : ["cocos2d","extensions"],
 
     "jsList" : [
-        "src/resource.js",
-        "src/app.js",
 
-        "src/GameLayer.js",
-
-        "src/Sprite/DraggableSprite.js",
-        "src/Sprite/CardSprite.js",
-        "src/Sprite/ResultSprite.js",
-        "src/GameConfigs.js"
     ]
 }

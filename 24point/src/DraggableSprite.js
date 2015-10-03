@@ -1,6 +1,7 @@
 /**
- * Created by freeze on 2015/7/27.
+ * Created by Frezc on 2015/9/24.
  */
+
 
 var DraggableSprite = cc.Sprite.extend({
     _listener: null,
@@ -62,7 +63,7 @@ var DraggableSprite = cc.Sprite.extend({
         var target = event.getCurrentTarget();
         var newPos = target.locate(touch);
         //cc.log("newPos: "+newPos);
-        if(!newPos && target.prevPosition) {
+        if(!newPos && target.prevPosition &&　!target.move(target.prevPosition, newPos)) {
             target.setPosition(target.prevPosition);
         }else{
             target.setPosition(newPos);
@@ -74,10 +75,22 @@ var DraggableSprite = cc.Sprite.extend({
         this.locate = listener;
     },
 
+    setMoveListener: function (listener) {
+        this.move = listener;
+    },
+
     //interface
     getRect: function () {
         return cc.rect(0,0,0,0);
     },
 
-    locate: function (touch) {cc.log("interface");}
+    //得到正确的放置位置 interface
+    locate: function (touch) {
+        return null;
+    },
+
+    //移动 interface
+    move: function (pre, next) {
+        return false;
+    }
 });
